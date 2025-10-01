@@ -5,6 +5,7 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'surah-list',
+    component: SurahListComponent,
     pathMatch: 'full',
   },
 
