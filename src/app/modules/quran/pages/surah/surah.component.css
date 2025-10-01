@@ -1,0 +1,65 @@
+.hybrid-mushaf {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(160deg, var(--color-background) 0%, #ffffff 60%);
+  box-sizing: border-box;
+}
+
+.page {
+  width: min(900px, 100%);
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+
+  /* Decorative thin border with subtle Islamic pattern */
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  border-image-source: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' > <defs> <pattern id='p' x='0' y='0' width='20' height='20' patternUnits='userSpaceOnUse' > <path d='M10 0L20 10L10 20L0 10Z' fill='none' stroke='%23BFA67A' stroke-opacity='0.6' stroke-width='1.1' /> </pattern> </defs> <rect x='0' y='0' width='120' height='120' fill='url(%23p)' /> </svg>");
+}
+
+.title {
+  text-align: center;
+  margin: 0 0 1rem;
+  font-family: "Aref Ruqaa", serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 6vw, 2.7rem);
+  color: var(--color-primary);
+  /* gold accent */
+}
+
+.ayahs {
+  text-align: center;
+}
+
+.text {
+  font-size: clamp(1.75rem, 4.2vw, 1.8rem);
+  line-height: 3rem;
+  color: #141414;
+}
+
+.ayah-num {
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-inline: 0.35rem;
+  background: linear-gradient(
+    135deg,
+    rgba(191, 166, 122, 0.15),
+    /* from primary */ rgba(14, 159, 110, 0.12) /* from secondary */
+  );
+  border: 1px solid rgba(191, 166, 122, 0.4);
+  /* primary */
+  border-radius: 10px;
+  padding: 0.05rem 0.35rem;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 2rem;
+  }
+}

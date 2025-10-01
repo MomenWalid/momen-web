@@ -1,0 +1,70 @@
+.compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  direction: rtl;
+  padding: 20px;
+}
+
+.compact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-white);
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: var(--color-text-main);
+  transition: all 0.2s ease;
+}
+
+.compact-item:hover {
+  background: var(--color-background);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.surah-number {
+  background: var(--color-primary);
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.surah-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.arabic-name {
+  font-family: var(--font-family-quran);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.english-name {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.ayah-count {
+  font-family: var(--font-family-main);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  background: var(--color-background);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}

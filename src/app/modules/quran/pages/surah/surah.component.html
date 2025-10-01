@@ -1,0 +1,15 @@
+<section class="hybrid-mushaf" dir="rtl" aria-labelledby="hybrid-surah-title">
+  <div class="page">
+    <h1 id="hybrid-surah-title" class="title">{{ surah?.name }}</h1>
+
+    <div class="ayahs" lang="ar">
+      <p class="text">
+        @for (verse of surah?.verses; track $index) {
+
+        <span>{{ verse.text }}</span>
+        <span class="ayah-num">﴿{{ verse.id }}﴾</span>
+        }
+      </p>
+    </div>
+  </div>
+</section>

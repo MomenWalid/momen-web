@@ -1,0 +1,12 @@
+<div class="compact-list">
+  @for (surah of surahs; track $index) {
+  <a class="compact-item" [routerLink]="['/surah', surah.id]">
+    <span class="surah-number">{{ surah.id }}</span>
+    <div class="surah-info">
+      <span class="arabic-name">{{ surah.name }}</span>
+      <span class="english-name">{{ surah.englishName }}</span>
+    </div>
+    <span class="ayah-count">{{ surah.ayahsCount }} آية</span>
+  </a>
+  }
+</div>
