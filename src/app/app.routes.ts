@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
-import { SurahListComponent } from './modules/quran/pages/surah-list/surah-list.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'surah-list',
-    component: SurahListComponent,
     pathMatch: 'full',
   },
 
