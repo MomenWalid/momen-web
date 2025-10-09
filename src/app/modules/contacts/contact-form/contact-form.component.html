@@ -1,0 +1,17 @@
+<div class="p-5 max-w-md mx-auto">
+  <h2 class="text-xl mb-4">Add New Contact</h2>
+
+  <div class="flex flex-col gap-3">
+    <input pInputText [(ngModel)]="contact.name" placeholder="Name" />
+    <input pInputText [(ngModel)]="contact.email" placeholder="Email" />
+    <input pInputText [(ngModel)]="contact.phone" placeholder="Phone" />
+
+    <button
+      pButton
+      type="button"
+      label="Save"
+      icon="pi pi-check"
+      (click)="save()"
+    ></button>
+  </div>
+</div>

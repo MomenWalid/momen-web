@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { ContactFormComponent } from './modules/contacts/contact-form/contact-form.component';
+import { ContactsListComponent } from './modules/contacts/contact-list/contacts-list.component';
 
 export const routes: Routes = [
   {
@@ -21,4 +23,7 @@ export const routes: Routes = [
         (m) => m.SurahComponent
       ),
   },
+
+  { path: 'contacts', component: ContactsListComponent },
+  { path: 'contacts/add', component: ContactFormComponent },
 ];
