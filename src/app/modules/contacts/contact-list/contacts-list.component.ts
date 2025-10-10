@@ -104,11 +104,11 @@ export class ContactsListComponent implements OnInit {
   }
 
   addContact() {
-    window.open('/contacts/add', '_blank');
+    window.open('contacts/add', '_blank');
     // this.router.navigate(['/contacts/add']);
   }
   openRecord(contact: any) {
-    const newWin = window.open('/contacts/edit', '_blank');
+    const newWin = window.open('contacts/edit', '_blank');
     newWin?.addEventListener('load', () => {
       newWin.history.replaceState(contact, '');
     });
