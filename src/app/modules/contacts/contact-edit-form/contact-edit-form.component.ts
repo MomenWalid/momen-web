@@ -18,7 +18,7 @@ export interface Contact {
 
 @Component({
   selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
+  templateUrl: './contact-edit-form.component.html',
   standalone: true,
   imports: [
     CommonModule,
@@ -29,12 +29,7 @@ export interface Contact {
     CalendarModule,
   ],
 })
-export class ContactFormComponent {
-  constructor(
-    private contactsService: ContactsService,
-    private router: Router
-  ) {}
-
+export class ContactEditFormComponent {
   contact = {
     name: '',
     email: '',
@@ -47,6 +42,17 @@ export class ContactFormComponent {
     created_at: new Date(),
   };
 
+  constructor(
+    private contactsService: ContactsService,
+    private router: Router
+  ) {
+    const state = window.history.state;
+    console.log(window.history);
+    console.log(window.history.state);
+    console.log(state);
+    this.contact = state;
+  }
+
   tagOptions = [
     { label: 'Prospect', value: 'prospect' },
     { label: 'Customer', value: 'customer' },
@@ -56,13 +62,14 @@ export class ContactFormComponent {
 
   save() {
     const channel = new BroadcastChannel('contacts');
-    channel.postMessage({ type: 'add', contact: this.contact });
+    channel.postMessage({ type: 'edit', contact: this.contact });
 
     console.log('Contact saved:', this.contact);
-    // localStorage.setItem('newContact', JSON.stringify(this.contact));
+  }
+  delete() {
+    const channel = new BroadcastChannel('contacts');
+    channel.postMessage({ type: 'delete', contact: this.contact });
 
-    // this.contactsService.addContact$.next(this.contact);
-
-    // you can push it to your service or navigate back to list
+    console.log('Contact deleted:', this.contact);
   }
 }

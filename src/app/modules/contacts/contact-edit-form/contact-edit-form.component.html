@@ -93,7 +93,7 @@
     </div>
   </div>
 
-  <div class="flex justify-end mt-5">
+  <div class="flex justify-end mt-5 gap-2">
     <button
       pButton
       type="button"
@@ -101,6 +101,14 @@
       icon="pi pi-check"
       (click)="save()"
       class="p-button-success"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="delete"
+      icon="pi pi-check"
+      (click)="delete()"
+      class="p-button-danger"
     ></button>
   </div>
 </div>
@@ -113,5 +121,10 @@
     display: inline-block;
     width: 100px;
     margin-inline: 10px;
+  }
+  .gap-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 </style>

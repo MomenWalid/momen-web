@@ -1,24 +1,15 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { ContactsService } from '../contact.service';
-import { FormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { DropdownModule } from 'primeng/dropdown';
-import { CalendarModule } from 'primeng/calendar';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-
-export interface Contact {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-}
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
+  selector: 'app-add-contact-dialog',
+  templateUrl: './add-contact-dialog.component.html',
   standalone: true,
   imports: [
     CommonModule,
@@ -29,11 +20,8 @@ export interface Contact {
     CalendarModule,
   ],
 })
-export class ContactFormComponent {
-  constructor(
-    private contactsService: ContactsService,
-    private router: Router
-  ) {}
+export class AddContactDialogComponent {
+  constructor(private ref: DynamicDialogRef) {}
 
   contact = {
     name: '',
@@ -64,5 +52,7 @@ export class ContactFormComponent {
     // this.contactsService.addContact$.next(this.contact);
 
     // you can push it to your service or navigate back to list
+
+    this.ref.close();
   }
 }
