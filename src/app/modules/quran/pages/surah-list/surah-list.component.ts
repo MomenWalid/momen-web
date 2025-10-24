@@ -16,17 +16,6 @@ export class SurahListComponent {
 
   ngOnInit() {
     this.getSurahs();
-    this.quranDataService.getAudios().subscribe((res) => {
-      console.log(res);
-    });
-
-    this.quranDataService.reciters().subscribe((res) => {
-      console.log('reciters', res);
-    });
-
-    this.quranDataService.suwar().subscribe((res) => {
-      console.log('suwar', res);
-    });
   }
 
   getSurahs() {
