@@ -19,27 +19,4 @@ export class QuranDataService {
   getSurah(number: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/surahs/${number}.json`);
   }
-
-  getAudios() {
-    return this.http.get('https://mp3quran.net/api/v3/languages');
-  }
-  radios() {
-    return this.http.get('https://www.mp3quran.net/api/v3/radios?language=ar');
-  }
-  reciters() {
-    return this.http.get(
-      'https://www.mp3quran.net/api/v3/reciters?language=ar'
-    );
-  }
-  rewayah() {
-    return this.http.get('https://www.mp3quran.net/api/v3/riwayat?language=ar');
-  }
-  suwar() {
-    return this.http.get('https://www.mp3quran.net/api/v3/suwar?language=ar');
-  }
-  ss() {
-    return this.http.get('https://server13.mp3quran.net/husr/001.mp3', {
-      responseType: 'arraybuffer',
-    });
-  }
 }

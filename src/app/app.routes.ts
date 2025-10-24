@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
-import { ContactFormComponent } from './modules/contacts/contact-form/contact-form.component';
-import { ContactsListComponent } from './modules/contacts/contact-list/contacts-list.component';
-import { ContactEditFormComponent } from './modules/contacts/contact-edit-form/contact-edit-form.component';
+import { SurahListComponent } from './modules/quran/pages/surah-list/surah-list.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'surah-list',
+    component: SurahListComponent,
     pathMatch: 'full',
   },
 
@@ -24,8 +23,4 @@ export const routes: Routes = [
         (m) => m.SurahComponent
       ),
   },
-
-  { path: 'contacts', component: ContactsListComponent },
-  { path: 'contacts/add', component: ContactFormComponent },
-  { path: 'contacts/edit', component: ContactEditFormComponent },
 ];
