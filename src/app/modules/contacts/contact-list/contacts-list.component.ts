@@ -86,7 +86,7 @@ export class ContactsListComponent implements OnInit {
   }
 
   getContacts() {
-    this.http.get('momen-web/contacts_100.json').subscribe((res: any) => {
+    this.http.get('/contacts_100.json').subscribe((res: any) => {
       console.log(res);
       this.contacts = res;
       this.filteredContacts = [...this.contacts];
